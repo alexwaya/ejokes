@@ -5,4 +5,9 @@ import pyjokes
 
 def index(request):
     jokes = pyjokes.get_joke()
-    return render(request, 'index.html', {'jokes:jokes'})
+
+    context = {
+            'jokes':jokes,
+        }
+
+    return render(request, 'index.html', context)
